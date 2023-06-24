@@ -113,7 +113,7 @@ export default {
                 }
             } else {
                 this.selectedDate = this.dateFormat
-                    .replace('%n', date.month)
+                    .replace('%n', date.monthIndex < 10 ? `0${date.monthIndex}` : date.monthIndex)
                     .replace('%Y', date.year)
             }
 
@@ -131,7 +131,7 @@ export default {
                 this.selectedDate = `${date.rangeFromMonth} - ${date.rangeToMonth}, ${date.year}`
             } else {
                 this.selectedDate = this.dateFormat
-                    .replace('%n', date.month)
+                    .replace('%n', date.monthIndex < 10 ? `0${date.monthIndex}` : date.monthIndex)
                     .replace('%Y', date.year)
             }
             this.$emit('change', date)
